@@ -1,5 +1,14 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<div ng-controller="View2Ctrl as vm">
+  <p>This is the partial for view 2.</p>
+
+
+  <select ng-model="vm.subRedditVal"
+          ng-change="vm.selectChange()"
+          ng-options="opt as opt.label for opt in vm.subRedditSelect">
+  </select>
+  <p>url value: {{ vm.subRedditVal.value }}</p>
+  <span>url: {{ vm.url }}</span>
+
+  <div  ng-repeat="gif in vm.imgObj">
+    <img id="reddit-image" ng-src="{{ gif }}" /> 
+  </div>

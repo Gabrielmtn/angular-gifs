@@ -97,6 +97,7 @@ angular.module('myApp.view2', ['ngRoute'])
     };
 
     activate();
+    
     function activate() {
       $http.jsonp(url)
         .success(function (data) {

@@ -1,1 +1,61 @@
+<div ng-controller="View1Ctrl as vm">
+
+
 <p>This is the partial for view 1.</p>
+
+ <button class="btn btn-default" ng-click="vm.launch($event)">Notify Dialog</button>
+
+<p>model binding</p>
+            <p>enter your name: </p>
+            <input type="text" ng-model="vm.name">
+        <p>
+          <span class="text-info">Your Name</span>: {{vm.name}}
+        </p>
+        
+        <p>
+          <span class="text-info">Your Name with uppercase filter </span>: {{vm.name | uppercase}}
+        </p>
+
+<p>ng-class swapping</p>
+    <button class="button" ng-class="{'active': vm.isActive}" ng-click="vm.activeButton($event)" type="button">Click Me to Toggle Class</button>
+ 
+<div class="progress-box" >
+  <div class="percentage-cur">
+    <span class="num">{{ vm.selectedRange }}%</span>
+  </div>
+  <div class="progress-bar progress-bar-slider">
+    <input class="progress-slider" type="range" min="0" max="100" ng-model="vm.selectedRange">
+    <div class="inner" ng-style="{ width: vm.selectedRange + '%' || '0%' }"></div>
+  </div>
+</div>
+
+
+<p>ng-switch example</p>
+
+    <label>Who is the best stooge?: <input type="text" ng-model="vm.value" /></label><br />
+
+ <div ng-switch="vm.value">
+        <div ng-switch-when="larry"><img src="http://www.threestooges.com/wp-content/uploads/2012/12/LarryFine.jpg" alt="">  </div>
+        <div ng-switch-when="curly"><img src="http://www.threestooges.com/wp-content/uploads/2012/12/CurlyHoward.jpg" alt="">  </div>
+        <div ng-switch-when="moe"><img src="http://www.threestooges.com/wp-content/uploads/2012/12/MoeHoward.jpg" alt="">  </div>
+        <div ng-switch-when="trump"><img src="https://static.wixstatic.com/media/fa3a8d_342b0886718442f194fbdc0cd3ff6d09~mv2.jpg/v1/fill/w_320,h_320/fa3a8d_342b0886718442f194fbdc0cd3ff6d09~mv2.jpg" alt="">  </div>
+        <div ng-switch-default>No match</div>
+    </div>
+
+<div class="modal-wrapper" ng-show="!vm.showModal">
+  <div class="modal">
+    
+    <h1>Modal Title</h1>
+    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+    
+    <button class="btn btn-default" ng-click="vm.launch($event)">Close</button>
+    
+  </div>
+</div>
+
+</div>
+
+<br>
+<br>
+<br>
+
